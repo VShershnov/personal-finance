@@ -2,13 +2,16 @@ package com.vshershnov.personalfinance.dto;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
+import java.util.Set;
+
 @Data
 public class ToshlTransaction extends TransactionDto {
 
     private AccountsTypeToshl accountsType;
-    private String labels;
+    private Set<String> labels;
     private Currency currency;
     private Currency mainCurrency;
 
-    private int sumInMainCurrency;
+    private BigDecimal sumInMainCurrency;
 }
