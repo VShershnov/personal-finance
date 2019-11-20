@@ -2,6 +2,7 @@ package com.vshershnov.personalfinance.dto;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
@@ -12,5 +13,5 @@ public class TransactionDto {
     private String expenseCategory;
     private String description;
 
-    private int sum;
+    private BigDecimal amount;
 }
