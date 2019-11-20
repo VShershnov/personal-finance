@@ -1,10 +1,11 @@
 package com.vshershnov.personalfinance.service;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.List;
 
-public interface DetailParsingService {
+public interface DetailParsingService<T> {
 
-    List<String> fetchData(File file);
+    List<T> fetchData(File file) throws FileNotFoundException;
 
 }

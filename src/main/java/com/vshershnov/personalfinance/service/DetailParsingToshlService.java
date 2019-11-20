@@ -5,10 +5,11 @@ import com.vshershnov.personalfinance.repository.FileServiceCsv;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.List;
 
 @Service
-public class DetailParsingToshlService implements DetailParsingService {
+public class DetailParsingToshlService implements DetailParsingService<ToshlTransactionDto> {
 
     private final FileServiceCsv<ToshlTransactionDto> csvFileService;
 
@@ -17,7 +18,7 @@ public class DetailParsingToshlService implements DetailParsingService {
     }
 
     @Override
-    public List<String> fetchData(File file) {
-        return null;
+    public List<ToshlTransactionDto> fetchData(File file) throws FileNotFoundException {
+        return csvFileService.readAll(file);
     }
 }
